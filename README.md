@@ -1,61 +1,68 @@
-Here is your simple README.md file with all extracted code, clean and minimal (no extra highlighting, no emojis):
+Got it — I’ve extracted and organized all code from your NGD experiments and converted it into a clean README.md style document you can directly use for GitHub or submission.
 
 
 ---
 
-# Next Generation Database Lab (MongoDB)
+📘 README – Next Generation Database Lab (MongoDB)
 
-Name: Tanuj Narula  
-Course: AIDS-A  
+👨‍🎓 Student Details
+
+Name: Tanuj Narula
+
+Course: AIDS-A
+
+Subject: Next Generation Databases Lab
+
+
 
 ---
 
-## Experiment 1: MongoDB Setup
+🧠 Experiment 1: MongoDB Setup
 
-Start MongoDB shell:
-```bash
+▶️ Start MongoDB Shell
+
 mongosh
 
 
 ---
 
-Experiment 2: Database Operations
+⚙️ Experiment 2: Database Operations
 
-Create / Switch Database:
+▶️ Create / Switch Database
 
 use mydb
 
-Show Databases:
+▶️ Show Databases
 
 show dbs
 
-Show Current Database:
+▶️ Show Current Database
 
 db
 
-Drop Database:
+▶️ Drop Database
 
 db.dropDatabase()
 
 
 ---
 
-Experiment 3: Create Collection
+📦 Experiment 3: Create Collection
 
-Create Collection:
+▶️ Create Collection
 
 db.createCollection("students")
 
-Show Collections:
+▶️ Show Collections
 
 show collections
 
 
 ---
 
-Experiment 4: Collection Options and Drop
+⚙️ Experiment 4: Collection Options & Drop
 
-Create Collection with Options:
+▶️ Create Collection with Options
 
 db.createCollection("col6", {
   capped: true,
@@ -64,16 +71,16 @@ db.createCollection("col6", {
   max: 10000
 })
 
-Drop Collection:
+▶️ Drop Collection
 
 db.col5.drop()
 
 
 ---
 
-Experiment 5: CRUD Operations
+🔁 Experiment 5: CRUD Operations
 
-Insert One:
+▶️ Insert One
 
 db.posts.insertOne({
   title: "Post Title 1",
@@ -84,7 +91,7 @@ db.posts.insertOne({
   date: Date()
 })
 
-Insert Many:
+▶️ Insert Many
 
 db.posts.insertMany([
   {
@@ -113,15 +120,15 @@ db.posts.insertMany([
   }
 ])
 
-Find All:
+▶️ Find All
 
 db.posts.find()
 
-Find with Condition:
+▶️ Find with Condition
 
 db.posts.find({ likes: { $gte: 3 } })
 
-Find using AND:
+▶️ Find using AND
 
 db.posts.find({
   $and: [
@@ -130,7 +137,7 @@ db.posts.find({
   ]
 })
 
-Find using AND with Condition:
+▶️ Find using AND + Condition
 
 db.posts.find({
   $and: [
@@ -139,91 +146,91 @@ db.posts.find({
   ]
 })
 
-Update One:
+▶️ Update One
 
 db.posts.updateOne(
   { title: "Post Title 4" },
   { $set: { likes: 5, category: "News" } }
 )
 
-Update Many:
+▶️ Update Many
 
 db.posts.updateMany(
   { likes: { $gt: 2 } },
   { $set: { likes: 6 } }
 )
 
-Delete One:
+▶️ Delete One
 
 db.posts.deleteOne({ title: "Post Title 3" })
 
-Delete Many:
+▶️ Delete Many
 
 db.posts.deleteMany({ category: "News" })
 
 
 ---
 
-Experiment 6: Projection
+🔎 Experiment 6: Projection
 
-Show Specific Field:
+▶️ Show Specific Field
 
 db.users.find({}, { name: 1 })
 
-Hide _id Field:
+▶️ Hide _id Field
 
 db.users.find({}, { name: 1, _id: 0 })
 
 
 ---
 
-Experiment 7: Cursor Methods
+📊 Experiment 7: Cursor Methods
 
-Limit:
+▶️ Limit
 
 db.users.find().limit(3)
 
-Skip:
+▶️ Skip
 
 db.users.find().skip(4)
 
-Sort Ascending:
+▶️ Sort Ascending
 
 db.users.find().sort({ age: 1 })
 
-Sort Descending with Skip and Limit:
+▶️ Sort Descending + Skip + Limit
 
 db.users.find().sort({ age: -1 }).skip(2).limit(3)
 
 
 ---
 
-Experiment 10: MongoDB with Python
+🐍 Experiment 10: MongoDB with Python
 
-Connect to MongoDB:
+▶️ Connect to MongoDB
 
 from pymongo import MongoClient
 
 client = MongoClient("mongodb://localhost:27017/")
 print("Connected")
 
-Create Database and Collection:
+▶️ Create Database & Collection
 
 db = client["student_db"]
 collection = db["students"]
 
-Insert Data:
+▶️ Insert Data
 
 student = {"name": "Rahul", "age": 21, "course": "BCA"}
 collection.insert_one(student)
 print("Data Inserted")
 
-Read Data:
+▶️ Read Data
 
 for s in collection.find():
     print(s)
 
-Update Data:
+▶️ Update Data
 
 collection.update_one(
     {"name": "Rahul"},
@@ -231,7 +238,7 @@ collection.update_one(
 )
 print("Data Updated")
 
-Delete Data:
+▶️ Delete Data
 
 collection.delete_one({"name": "Rahul"})
 print("Data Deleted")
@@ -239,12 +246,44 @@ print("Data Deleted")
 
 ---
 
-End
+🎯 Conclusion
+
+This lab covers:
+
+MongoDB basics
+
+Database & collection operations
+
+CRUD operations
+
+Query operators
+
+Projection
+
+Cursor methods (limit, skip, sort)
+
+MongoDB integration with Python using PyMongo
+
+
 
 ---
 
-If you want next:
-- I can **add theory under each experiment (for GitHub + viva both)**
-- Or **convert this into a proper formatted PDF report**
+🚀 Optional (for GitHub enhancement)
 
-Just tell 👍
+You can add:
+
+Screenshots of output
+
+Explanation sections
+
+Viva questions
+
+
+
+---
+
+If you want, I can: ✅ Convert this into perfect GitHub README with badges & formatting
+✅ Add theory + explanation under each code block
+✅ Or make a PDF report ready for submission
+
+Just tell me 👍
