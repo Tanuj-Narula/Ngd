@@ -1,4 +1,4 @@
-Got it — you want proper Markdown with code blocks (```) so GitHub renders it correctly. Here’s the complete raw README.md ready to copy:
+Here is your simple README.md file with all extracted code, clean and minimal (no extra highlighting, no emojis):
 
 
 ---
@@ -8,9 +8,18 @@ Got it — you want proper Markdown with code blocks (```) so GitHub renders it 
 Name: Tanuj Narula  
 Course: AIDS-A  
 
+---
+
+## Experiment 1: MongoDB Setup
+
 Start MongoDB shell:
 ```bash
 mongosh
+
+
+---
+
+Experiment 2: Database Operations
 
 Create / Switch Database:
 
@@ -28,6 +37,11 @@ Drop Database:
 
 db.dropDatabase()
 
+
+---
+
+Experiment 3: Create Collection
+
 Create Collection:
 
 db.createCollection("students")
@@ -35,6 +49,11 @@ db.createCollection("students")
 Show Collections:
 
 show collections
+
+
+---
+
+Experiment 4: Collection Options and Drop
 
 Create Collection with Options:
 
@@ -48,6 +67,11 @@ db.createCollection("col6", {
 Drop Collection:
 
 db.col5.drop()
+
+
+---
+
+Experiment 5: CRUD Operations
 
 Insert One:
 
@@ -137,13 +161,23 @@ Delete Many:
 
 db.posts.deleteMany({ category: "News" })
 
-Projection (show specific field):
+
+---
+
+Experiment 6: Projection
+
+Show Specific Field:
 
 db.users.find({}, { name: 1 })
 
-Projection (hide _id):
+Hide _id Field:
 
 db.users.find({}, { name: 1, _id: 0 })
+
+
+---
+
+Experiment 7: Cursor Methods
 
 Limit:
 
@@ -161,22 +195,35 @@ Sort Descending with Skip and Limit:
 
 db.users.find().sort({ age: -1 }).skip(2).limit(3)
 
-MongoDB with Python:
+
+---
+
+Experiment 10: MongoDB with Python
+
+Connect to MongoDB:
 
 from pymongo import MongoClient
 
 client = MongoClient("mongodb://localhost:27017/")
 print("Connected")
 
+Create Database and Collection:
+
 db = client["student_db"]
 collection = db["students"]
+
+Insert Data:
 
 student = {"name": "Rahul", "age": 21, "course": "BCA"}
 collection.insert_one(student)
 print("Data Inserted")
 
+Read Data:
+
 for s in collection.find():
     print(s)
+
+Update Data:
 
 collection.update_one(
     {"name": "Rahul"},
@@ -184,8 +231,20 @@ collection.update_one(
 )
 print("Data Updated")
 
+Delete Data:
+
 collection.delete_one({"name": "Rahul"})
 print("Data Deleted")
 
+
 ---
 
+End
+
+---
+
+If you want next:
+- I can **add theory under each experiment (for GitHub + viva both)**
+- Or **convert this into a proper formatted PDF report**
+
+Just tell 👍
